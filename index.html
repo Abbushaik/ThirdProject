@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style type="text/css">
+
+        body,html
+        {
+            height:100%;
+            width:100%;
+        }
+        body
+        {
+            background-color:cornflowerblue;
+        }
+        .box
+        {
+            border:1px solid black;
+            height:200px;
+            width:400px;
+            background-color:#83ca9e;
+            margin-left:auto;
+            margin-right:auto;
+            align-items: center;
+            justify-content:center;
+            display:flex;
+            flex-wrap:wrap;
+            position: relative;
+            top:15%;
+            box-sizing: content-box;
+            padding-top:15px;
+            border-radius:5px;
+            bottom: 150px;
+        }
+        #first
+        {
+            height:30px;
+            width:300px;
+            border-radius:5px;
+            border:none;
+        }
+        #first::placeholder
+        {
+            font-size:15px;
+            text-align: center;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #second
+        {
+            position:relative;
+            height:30px;
+            width:300px;
+            border-radius:5px;
+            border:none;
+            bottom:20px;
+        }
+        
+        #second::placeholder
+        {
+            font-size:15px;
+            text-align: center;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #btn
+        {
+            position:relative;
+            height:30px;
+            width:100px;
+            bottom:20px;
+            font-size:17px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            border-radius:5px;
+            border:1px solid black;
+        }
+        #operator
+        {
+            position:relative;
+            height:25px;
+            width:100px;
+            bottom:10px;
+            border-radius: 5px;
+        }
+        #result
+        {
+            position:relative;
+            height:25px;
+            bottom:20px;
+            border-radius:5px;
+            border:none;
+            font-size:15px;
+        }
+        h3{
+            width:250px;
+            text-align: center;
+            position: relative;
+            top:90px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-weight:500;
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h3>Basic Calculator</h3>
+    </center>
+    <div class="box">
+        <input type="number" name="first" id="first" step="any" placeholder="Enter 1 Number "/>
+        <br>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" name="second" id="second" step="any" placeholder="Enter 2 Number "/>
+        <br/>
+        <button onclick="calc()" id="btn">Calculate</button>
+        <input type="text" name="" id="result" readonly"/" step="any">
+    </div>
+</body>
+<script type="text/javascript">
+    function calc()
+    {
+        var num1=document.getElementById("first").value;
+        var num2=document.getElementById("second").value;
+        var num3=document.getElementById("operator").value;
+        var res;
+        switch(num3)
+        {
+            case "+":res=parseInt(num1)+parseInt(num2);
+            break;
+            case '-':res=parseInt(num1)-parseInt(num2);
+            break;
+            case '*':res=parseInt(num1)*parseInt(num2);
+            break;
+            case '/':res=parseInt(num1)/parseInt(num2);
+            break;
+        }
+        document.getElementById("result").value=res;
+    }
+</script>
+</html>
